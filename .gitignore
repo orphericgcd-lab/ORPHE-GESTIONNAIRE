@@ -1,0 +1,13 @@
+__pycache__/
+.vscode/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+.pytest_cache/
+*.spec
+!ORPHE-GEST.spec
+build/
+dist/
+*.log
