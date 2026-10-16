@@ -4,10 +4,11 @@ Gestionnaire de fichiers avec assistant IA intégré, pensé pour un usage hors 
 
 ## Télécharger l’application Windows
 
+- Le fichier **ORPHE-GEST.exe** est aussi disponible directement à la racine de la liste **Code > fichiers** du dépôt.
 - [Télécharger et lancer ORPHE-GEST (.exe)](https://github.com/orphericgcd-lab/ORPHE-GESTIONNAIRE/releases/latest/download/ORPHE-GEST.exe) — téléchargez le fichier puis double-cliquez dessus.
 - [Télécharger ORPHE-GEST en ZIP portable](https://github.com/orphericgcd-lab/ORPHE-GESTIONNAIRE/releases/latest/download/ORPHE-GEST.zip) — extrayez l’archive puis lancez `ORPHE-GEST.exe`.
 
-Ces liens téléchargent l’application compilée. L’archive « Source code (zip) » de GitHub contient le code source et ne permet pas de lancer le gestionnaire.
+Le fichier de la liste est stocké avec Git LFS. Ouvrez `ORPHE-GEST.exe`, puis utilisez **Download** pour le télécharger. L’archive « Source code (zip) » de GitHub contient le code source et ne permet pas de lancer le gestionnaire.
 
 ## Prérequis
 

@@ -59,3 +59,34 @@ jobs:
           .\dist\ORPHE-GEST.zip
           --title "ORPHE-GEST $env:GITHUB_REF_NAME"
           --generate-notes
+
+      - name: Update executable in repository files
+        shell: pwsh
+        env:
+          GIT_LFS_SKIP_SMUDGE: "1"
+        run: |
+          git lfs install --local
+          if ($LASTEXITCODE -ne 0) { throw "Could not initialize Git LFS." }
+
+          git fetch origin main
+          if ($LASTEXITCODE -ne 0) { throw "Could not fetch the main branch." }
+
+          git checkout --force --no-track -B main origin/main
+          if ($LASTEXITCODE -ne 0) { throw "Could not check out the main branch." }
+
+          Copy-Item -LiteralPath .\dist\ORPHE-GEST.exe -Destination .\ORPHE-GEST.exe -Force
+          git add -- ORPHE-GEST.exe
+          if ($LASTEXITCODE -ne 0) { throw "Could not stage the executable." }
+
+          git diff --cached --quiet
+          if ($LASTEXITCODE -eq 0) {
+            Write-Host "The repository already contains this executable."
+            exit 0
+          }
+          if ($LASTEXITCODE -ne 1) { throw "Could not compare the staged executable." }
+
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -m "Update downloadable executable for $env:GITHUB_REF_NAME"
+          if ($LASTEXITCODE -ne 0) { throw "Could not commit the executable." }
+
+          git push origin HEAD:main
+          if ($LASTEXITCODE -ne 0) { throw "Could not push the executable to main." }
