@@ -2,6 +2,13 @@
 
 Gestionnaire de fichiers avec assistant IA intégré, pensé pour un usage hors ligne et inspiré d’une interface Windows 11.
 
+## Télécharger l’application Windows
+
+- [Télécharger et lancer ORPHE-GEST (.exe)](https://github.com/orphericgcd-lab/ORPHE-GESTIONNAIRE/releases/latest/download/ORPHE-GEST.exe) — téléchargez le fichier puis double-cliquez dessus.
+- [Télécharger ORPHE-GEST en ZIP portable](https://github.com/orphericgcd-lab/ORPHE-GESTIONNAIRE/releases/latest/download/ORPHE-GEST.zip) — extrayez l’archive puis lancez `ORPHE-GEST.exe`.
+
+Ces liens téléchargent l’application compilée. L’archive « Source code (zip) » de GitHub contient le code source et ne permet pas de lancer le gestionnaire.
+
 ## Prérequis
 
 - Python 3.10+
