@@ -44,6 +44,11 @@ jobs:
           $digest = (Get-FileHash -LiteralPath .\dist\ORPHE-GEST.exe -Algorithm SHA256).Hash.ToLowerInvariant()
           Set-Content -LiteralPath .\dist\ORPHE-GEST.exe.sha256 -Value $digest -NoNewline -Encoding ascii
 
+      - name: Create portable ZIP
+        shell: pwsh
+        run: |
+          Compress-Archive -LiteralPath .\dist\ORPHE-GEST.exe -DestinationPath .\dist\ORPHE-GEST.zip -CompressionLevel Optimal
+
       - name: Publish GitHub release
         env:
           GH_TOKEN: ${{ github.token }}
@@ -51,5 +56,6 @@ jobs:
           gh release create $env:GITHUB_REF_NAME
           .\dist\ORPHE-GEST.exe
           .\dist\ORPHE-GEST.exe.sha256
+          .\dist\ORPHE-GEST.zip
           --title "ORPHE-GEST $env:GITHUB_REF_NAME"
           --generate-notes

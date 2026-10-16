@@ -115,6 +115,13 @@ Le workflow `.github\workflows\release.yml` construit et publie l’exécutable 
 Git `vX.Y.Z` est publiée. Avant de créer une release, incrémentez `APP_VERSION` dans `orphe_gest\version.py` et utilisez la
 même version dans l’étiquette. Le dépôt GitHub public doit exister pour que les vérifications et téléchargements fonctionnent.
 
+### Télécharger et lancer l’application
+
+Dans la page [des dernières versions](https://github.com/orphericgcd-lab/ORPHE-GESTIONNAIRE/releases/latest), téléchargez
+l’asset **ORPHE-GEST.zip** sous « Assets », puis extrayez-le. Le fichier `ORPHE-GEST.exe` se trouve à la racine du dossier
+extrait; double-cliquez dessus pour lancer le gestionnaire. L’archive « Source code (zip) » proposée par GitHub contient le
+code du projet, pas l’application compilée.
+
 ## Notes
 
 - Le projet est principalement structuré autour de [fif.py](fif.py).
